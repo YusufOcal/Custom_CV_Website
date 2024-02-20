@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.About
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Hakkımda Düzenleme Sayfası</h3>
+</div>
+
+<br />
+<br />
+
+@using (Html.BeginForm("Index", "About", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.AboutID)
+    <br />
+
+    @Html.Label("Hakkımda Başlığı")
+    @Html.TextBoxFor(x => x.Title, new {@class = "form-control"})
+    <br />
+    @Html.Label("Hakkımda Açıklama")    
+    @Html.TextAreaFor(x => x.Description, 8, 2, new {@class = "form-control"})
+    <br />
+    @Html.Label("Yaş Bilgisi")
+    @Html.TextBoxFor(x => x.Age, new {@class = "form-control"})
+    <br />
+    @Html.Label("Mail Bilgisi")
+    @Html.TextBoxFor(x => x.Mail, new {@class = "form-control"})
+    <br />
+     @Html.Label("Telefon Numarası")
+    @Html.TextBoxFor(x => x.Phone, new {@class = "form-control"})
+    <br />
+    @Html.Label("Adres Bilgisi")
+    @Html.TextBoxFor(x => x.Adress, new {@class = "form-control"})
+    <br />
+    @Html.Label("Görsel Yolu")
+    @Html.TextBoxFor(x => x.ImageUrl, new {@class = "form-control"})
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
